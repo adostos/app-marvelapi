@@ -1,0 +1,30 @@
+$black: #151515;
+$grey: #999;
+$red: #e62429;
+$yellow: #f3d403;
+$blue: #2a75b3;
+
+button {
+    border: none;
+    outline: none;
+    padding: 5px 20px;
+
+    font-weight: bold;
+    color: white;
+    background-color: $red;
+    -webkit-clip-path: polygon(10% 0, 100% 0, 100% 75%, 90% 100%, 0 100%, 0 25%);
+    clip-path: polygon(10% 0, 100% 0, 100% 75%, 90% 100%, 0 100%, 0 25%);
+
+    transition: all .2s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #960409;
+        color: white;
+    }
+
+    &:active {
+        background-color: $yellow;
+        color: $black;
+    }
+}
