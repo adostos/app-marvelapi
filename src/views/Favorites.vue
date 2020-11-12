@@ -11,7 +11,7 @@
             v-for="item in $store.state.favorites"
             :key="item.id"
         >
-            <favorites-card :favorite="item" />
+            <favorites-card :character="item" />
         </article>
     </div>
 </template>

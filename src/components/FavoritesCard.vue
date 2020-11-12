@@ -1,12 +1,14 @@
 <template>
-    <aside class="favorites" v-if="favorite != false">
+    <aside class="favorites" v-if="character != false">
         <span>
-            <img
-                :src="favorite.path"
-                alt="image hero"
-            />
+            <router-link :to="{ name: 'Hero', params: { character } }">
+                <img
+                    :src="character.path"
+                    alt="image hero"
+                />
+            </router-link>
         </span>
-        <h2>{{ favorite.name }}</h2>
+        <h2>{{ character.name }}</h2>
         <br />
         <button @click.prevent="removeHero">DisLike</button>
     </aside>
@@ -15,11 +17,11 @@
 <script>
     export default {
         props: [
-            'favorite'
+            'character'
         ],
         methods: {
             removeHero() {
-                this.$store.commit('removeFavorite', this.favorite.id)
+                this.$store.commit('removeFavorite', this.character.id)
             }
         }
     }

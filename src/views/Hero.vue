@@ -10,7 +10,10 @@
         </span>
     
         <article>
-            <h2>{{ character.name }}</h2>
+            <h2>
+                {{ character.name }}
+                <button @click.prevent="commitHero">Like</button>
+            </h2>
             <h3>Description:</h3>
 
             <p v-if="character.description.length !== 0">
@@ -28,6 +31,11 @@
         props: [
             'character'
         ],
+        methods: {
+            commitHero() {
+                this.$store.commit('addFavorite', this.character)
+            }
+        },
     }
 </script>
 
@@ -78,6 +86,10 @@ h3 {
 
 p {
     margin-top: 5px;
+}
+
+button {
+    float: right;
 }
 
 </style>
